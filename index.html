@@ -4,7 +4,90 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <!-- 제이쿼리 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- fontawesome CND -->
+    <script
+      src="https://kit.fontawesome.com/2c827c8cca.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <header class="top-header">
+      <div class="header-wrap m-auto">
+        <div id="leftWrap">
+          <ul>
+            <li>
+              <a href="#">Google 정보</a>
+            </li>
+            <li>
+              <a href="#">스토어</a>
+            </li>
+          </ul>
+        </div>
+        <nav class="top-nav">
+          <ul>
+            <li>
+              <a href="#">Gmail</a>
+            </li>
+            <li>
+              <a href="#">이미지</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-bars"></i></a>
+            </li>
+          </ul>
+          <div class="profile_img_wrap">
+            <img src="imgs/profileimg.gif" alt="profile" />
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section></section>
+      <section></section>
+      <section></section>
+    </main>
+    <footer>
+      <div></div>
+      <div></div>
+    </footer>
+    <script>
+      // 이미지 종횡비 계산 기능
+      $.ratioBoxH = function (boxEl, imgEl) {
+        var boxSel = $(boxEl);
+        var boxW = boxSel.width();
+        var boxH = boxSel.height();
+        var boxRatio = boxH / boxW;
+
+        var imgSel = $(imgEl);
+
+        var setImgDimensions = function () {
+          var imgW = imgSel.width();
+          var imgH = imgSel.height();
+          var imgRatio = imgH / imgW;
+
+          if (boxRatio < imgRatio) {
+            //console.log("boxW :", boxW);
+            imgSel.width(boxW).height("auto");
+          } else {
+            //console.log("boxH :", boxH);
+            imgSel.height(boxH).width("auto");
+          }
+        };
+
+        // 이미지의 로드 이벤트 핸들러 등록
+        imgSel.on("load", setImgDimensions);
+
+        // 초기 설정
+        setImgDimensions();
+      };
+
+      $(function () {
+        // 이미지 종횡비 계산
+        $.ratioBoxH(".profile_img_wrap", ".profile_img_wrap img");
+      });
+    </script>
+  </body>
 </html>
