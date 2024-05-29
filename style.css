@@ -113,6 +113,11 @@ a {
   text-decoration:underline
 }
 
+.top-nav ul li span {
+  padding: 6px;
+  color:#717271;
+}
+
 .profile_img_wrap{
   overflow: hidden;
   width: 36px;
@@ -192,4 +197,70 @@ a {
   border-radius: 5px;
   font-size: 14px;
   color: #5F6368;
+}
+
+/* 하단 영역 */
+footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #f1f2f1;
+  color: #202124;
+  font-size:15px;
+
+}
+
+.country{
+  border-bottom: solid 1px #e3e4e3;;
+  padding-left: 32px;
+  line-height: 50px;
+  height: 50px;
+}
+
+.foot-links-wrap{
+  border-top: solid 1px #e3e4e3;
+  padding-left: 32px;
+  line-height: 50px;
+  height: 50px;
+  display: flex;
+  flex:auto;
+}
+
+.foot-links-wrap-right{
+  width:50%
+}
+
+.foot-links-wrap-right > ul{
+  list-style: none;
+  display: flex;
+}
+
+.foot-links-wrap-right > ul li a{
+  display: block;
+  padding-right: 28px;
+  text-decoration: none;
+}
+
+.foot-links-wrap-right > ul li a:hover{
+  text-decoration:underline
+}
+
+.foot-links-wrap-left{
+  width: 50%;
+}
+
+.foot-links-wrap-left > ul{
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.foot-links-wrap-left > ul li a{
+  display: block;
+  padding-right: 28px;
+  text-decoration: none;
+}
+
+.foot-links-wrap-left > ul li a:hover{
+  text-decoration:underline
 }
